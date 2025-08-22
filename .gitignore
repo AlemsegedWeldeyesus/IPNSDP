@@ -1,0 +1,14 @@
+temp.m
+casadi-3.7.0-windows64-matlab2018b
+casadi-3.7.1-linux64-matlab2018b
+examples/sol
+src/*.m
+src/*.mat
+examples/*.mat
+examples/*.zip
+Sedumi
+*.txt
+*.mat
+
+
+
