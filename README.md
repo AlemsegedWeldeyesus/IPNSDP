@@ -55,7 +55,7 @@ A successful run confirms IPNSDP is installed correctly and ready to use.
 
 ## Problem Setup
 
-IPNSDP uses a structured MATLAB template, `ipnsdp_input_template.m`, to define problems via a structured `prob` object.
+IPNSDP uses a structured MATLAB template, `ipnsdp_user_template.m`, to define problems via a structured `prob` object.
 
 ### Minimal Required Fields
 
@@ -66,14 +66,14 @@ IPNSDP uses a structured MATLAB template, `ipnsdp_input_template.m`, to define p
 
 - `prob.nX`: Number of matrix variables `X1, ..., XmX`. Set to 0 if none  
 - `prob.dimX`: Vector `[d_1, ..., d_mX]` of matrix dimensions. `[]` if none  
-- `prob.lbX`: Vector `[rho_1, ..., rho_mX]` for lower bounds `Xk >= rho_k * I`. Use `-Inf` selectively. Defaults used if not provided  
-- `prob.ubX`: Vector `[rho_bar1, ..., rho_barmX]` for upper bounds `Xk <= rho_bar_k * I`. Use `Inf` selectively. Defaults used if not provided  
+- `prob.lbX`: Vector `[rho_1, ..., rho_mX]` for lower bounds `Xk >= rho_k * I`. Use `-Inf` for selectively unbounded entries. Defaults used if not provided  
+- `prob.ubX`: Vector `[rho_bar1, ..., rho_barmX]` for upper bounds `Xk <= rho_bar_k * I`. Use `Inf` for selectively unbounded entries. Defaults used if not provided  
 
 #### Scalar Variables
 
 - `prob.nu`: Number of scalar variables `u in R^n`. 0 if none  
-- `prob.lbu`: Lower bounds `u >= u_lower`. `-Inf` selectively. Defaults used if not provided  
-- `prob.ubu`: Upper bounds `u <= u_upper`. `Inf` selectively. Defaults used if not provided  
+- `prob.lbu`: Lower bounds `u >= u_lower`. `-Inf` for selectively unbounded entries. Defaults used if not provided  
+- `prob.ubu`: Upper bounds `u <= u_upper`. `Inf` for selectively unbounded entries. Defaults used if not provided  
 
 #### PSD Constraints
 
@@ -88,8 +88,8 @@ IPNSDP uses a structured MATLAB template, `ipnsdp_input_template.m`, to define p
 
 #### Function Handles
 
-- `prob.f_obj`: Objective function handle, e.g., `@(x) objective(x, prob)`  
-- `prob.c1`: Nonlinear constraints function handle, returning `[eq, ineq, psd]`  
+- `prob.obj`: Objective function handle, e.g., `@(x) objective(x, prob)`  
+- `prob.nlcon`: Nonlinear constraints function handle, returning `[eq, ineq, psd]`  
   - `eq`: Nonlinear equality vector. `[]` if none  
   - `ineq`: Nonlinear inequality vector. `[]` if none  
   - `psd`: Cell array of symmetric matrices for PSD constraints. `{}` if none  
@@ -126,7 +126,7 @@ The solver returns two main outputs: `x` and `info`.
 ## Documentation
 
 - For clarity of the mathematical formulation, see **ipnsdp.pdf**.  
-- For further details on problem setup and solver options, refer to **ipnsdp_input_template.m**.  
+- For further details on problem setup and solver options, refer to **ipnsdp_user_template.m**.  
 - Several illustrative examples are also included in the **examples** directory.  
 
 ## License
