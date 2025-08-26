@@ -55,7 +55,7 @@ A successful run confirms IPNSDP is installed correctly and ready to use.
 
 ## Problem Setup
 
-IPNSDP uses a structured MATLAB template, `ipnsdp_input_template.m`, to define problems via a structured `prob` object.
+IPNSDP uses a structured MATLAB template, `ipnsdp_user_template.m`, to define problems via a structured `prob` object.
 
 ### Minimal Required Fields
 
@@ -126,7 +126,7 @@ The solver returns two main outputs: `x` and `info`.
 ## Documentation
 
 - For clarity of the mathematical formulation, see **ipnsdp.pdf**.  
-- For further details on problem setup and solver options, refer to **ipnsdp_input_template.m**.  
+- For further details on problem setup and solver options, refer to **ipnsdp_user_template.m**.  
 - Several illustrative examples are also included in the **examples** directory.  
 
 ## License
