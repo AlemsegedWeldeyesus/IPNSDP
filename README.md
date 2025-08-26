@@ -72,8 +72,8 @@ IPNSDP uses a structured MATLAB template, `ipnsdp_input_template.m`, to define p
 #### Scalar Variables
 
 - `prob.nu`: Number of scalar variables `u in R^n`. 0 if none  
-- `prob.lbu`: Lower bounds `u >= u_lower`. `-Inf` selectively. Defaults used if not provided  
-- `prob.ubu`: Upper bounds `u <= u_upper`. `Inf` selectively. Defaults used if not provided  
+- `prob.lbu`: Lower bounds `u >= u_lower`. `-Inf` for selectively unbounded entries. Defaults used if not provided  
+- `prob.ubu`: Upper bounds `u <= u_upper`. `Inf` for selectively unbounded entries. Defaults used if not provided  
 
 #### PSD Constraints
 
