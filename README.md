@@ -66,8 +66,8 @@ IPNSDP uses a structured MATLAB template, `ipnsdp_input_template.m`, to define p
 
 - `prob.nX`: Number of matrix variables `X1, ..., XmX`. Set to 0 if none  
 - `prob.dimX`: Vector `[d_1, ..., d_mX]` of matrix dimensions. `[]` if none  
-- `prob.lbX`: Vector `[rho_1, ..., rho_mX]` for lower bounds `Xk >= rho_k * I`. Use `-Inf` selectively. Defaults used if not provided  
-- `prob.ubX`: Vector `[rho_bar1, ..., rho_barmX]` for upper bounds `Xk <= rho_bar_k * I`. Use `Inf` selectively. Defaults used if not provided  
+- `prob.lbX`: Vector `[rho_1, ..., rho_mX]` for lower bounds `Xk >= rho_k * I`. Use `-Inf` for selectively unbounded entries. Defaults used if not provided  
+- `prob.ubX`: Vector `[rho_bar1, ..., rho_barmX]` for upper bounds `Xk <= rho_bar_k * I`. Use `Inf` for selectively unbounded entries. Defaults used if not provided  
 
 #### Scalar Variables
 
@@ -88,8 +88,8 @@ IPNSDP uses a structured MATLAB template, `ipnsdp_input_template.m`, to define p
 
 #### Function Handles
 
-- `prob.f_obj`: Objective function handle, e.g., `@(x) objective(x, prob)`  
-- `prob.c1`: Nonlinear constraints function handle, returning `[eq, ineq, psd]`  
+- `prob.obj`: Objective function handle, e.g., `@(x) objective(x, prob)`  
+- `prob.nlcon`: Nonlinear constraints function handle, returning `[eq, ineq, psd]`  
   - `eq`: Nonlinear equality vector. `[]` if none  
   - `ineq`: Nonlinear inequality vector. `[]` if none  
   - `psd`: Cell array of symmetric matrices for PSD constraints. `{}` if none  
