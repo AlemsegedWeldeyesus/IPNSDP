@@ -1,6 +1,6 @@
 function t_buck()
-% This is a minimization problem from the paper "Truss geometry and topology optimization with global stability
-% constraints" by Weldeyesus et al. The objective is to minimize l(v)' * a
+% This is a minimization problem from the paper "Truss topology optimization with global stability
+% constraints" by Weldeyesus et al. The objective is to minimize l' * a
 % subject to the following constraints:
 % 1. f' * u <= zeta
 % 2. K(a) * u = f
@@ -28,8 +28,8 @@ prob.b2  = problem_data.b2;
 prob.x0.X = cell(prob.nX, 1);
 prob.x0.u = problem_data.u0;
 prob.problem_data = problem_data;
-prob.f_obj = @(x) geopt_objective(x, prob);
-prob.c1 = @(x) geopt_nonlinear_con(x, prob);
+prob.obj = @(x) geopt_objective(x, prob);
+prob.nlcon = @(x) geopt_nonlinear_con(x, prob);
 
 % Solve
 [x_sol, info] = ipnsdp_solve(prob);

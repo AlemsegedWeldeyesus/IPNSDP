@@ -25,7 +25,7 @@ M3_rand = rand(n) * 2 - 1;
 M3 = (M3_rand + M3_rand') / 2;
 
 %% ==================== IPNSDP FORMULATION ====================
-prob_p.name = 'min_eigenvalue_primal_sdp';
+prob_p.name = 'min_eigenvaluenlcon_primal_sdp';
 % Store problem constants in the problem_data struct
 prob_p.problem_data = struct('n', n, 'p', p, 'M1', M1, 'M2', M2, 'M3', M3);
 prob_p.nX = 1;      % One matrix variable: Pi
@@ -38,17 +38,17 @@ prob_p.ubu = ones(p,1);
 prob_p.nPSDcon = 0; % PSD constraint for pi is handled by the X block
 
 % Objective function
-prob_p.f_obj = @(x) trace(x.X{1} * get_M_q(x, prob_p));
+prob_p.obj = @(x) trace(x.X{1} * get_M_q(x, prob_p));
 
 % Solve the problem
-prob_p.c1 = @(x) get_constraints_min_eigenvalue(x, prob_p);
+prob_p.nlcon = @(x) get_constraints_min_eigenvalue(x, prob_p);
 
 % Initial guess for the variables
 prob_p.x0.X = {eye(n)}; % Initial guess for Pi
 prob_p.x0.u = zeros(p, 1); % Initial guess for q
 
-prob_p.solve = @() ipnsdp_solve(prob_p);
-[x_sol, ~] = prob_p.solve();
+% Solve
+[x_sol, info] = ipnsdp_solve(prob_p);
 
 end
 

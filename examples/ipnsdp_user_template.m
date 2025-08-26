@@ -77,10 +77,10 @@ prob.b2  = [];       % RHS vector of linear inequality constraints.
                      % [] if none.
 
 % Objective function
-prob.f_obj = @(x) objective(x, prob);  
+prob.obj = @(x) objective(x, prob);  
                                 % User-defined objective function 
 % Nonlinear and PSD constraints
-prob.c = @(x) nonlinear_constraint(x, prob);  
+prob.nlcon = @(x) nonlinear_constraint(x, prob);  
                      % User-defined nonlinear constraints
                      % Must return [eq, ineq, psd]:
                      % eq   = nonlinear equalities (vector)
@@ -120,8 +120,7 @@ prob.options.penlp            = 0;      % Penalty parameter (0 = off)
 prob.options.penldeg          = 2;      % 1 or 2: Penalty degree 
 
 %% Solve the problem
-prob.solve = @() ipnsdp_solve(prob);
-[x_sol, info] = prob.solve();
+[x_sol, info] = ipnsdp_solve(prob);
 
 %% Results (saved to ipnsdp_sol.mat)
 x_sol.X              % Cell array of solution X_k matrices or slacks 

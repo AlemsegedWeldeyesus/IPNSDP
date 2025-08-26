@@ -65,20 +65,17 @@ for i = 1:length(q_values)
     prob.nPSDcon = 0;          %  PSD constraint for Q is handled by the X block
 
     % Objective function handle
-    prob.f_obj = @(x) get_objective_value(x, prob);
+    prob.obj = @(x) get_objective_value(x, prob);
     
     % Constraint function handle
-    prob.c1 = @(x) get_constraints_financial(x, prob);
+    prob.nlcon = @(x) get_constraints_financial(x, prob);
     
     % Initial guesses
     prob.x0.X = {1* eye(q)};           % Initial Q
     prob.x0.u = .01*ones(q + 1, 1);     % Initial [a; b]
 
     % Solve the problem using the IPNSDP solver
-    prob.solve = @() ipnsdp_solve(prob);
-
-    % Set options
-    [x, info] = prob.solve();
+    [x, info] = ipnsdp_solve(prob);
     
     % Extract solution
     Q_sol = x.X{1};        % Optimal Q

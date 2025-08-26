@@ -14,7 +14,7 @@ clear
 % Import problem data
 problem_data = getProblemData();
 
-% Define the IPNSDP problem structure
+% Define the IPNSDP problem strf_objucture
 prob = struct();
 prob.name = 'GeoOpt_Buckling';
 prob.nX = 0;
@@ -28,8 +28,8 @@ prob.b2  = problem_data.b2;
 prob.x0.X = cell(prob.nX, 1);
 prob.x0.u = problem_data.u0;
 prob.problem_data = problem_data;
-prob.f_obj = @(x) geopt_objective(x, prob);
-prob.c1 = @(x) geopt_nonlinear_con(x, prob);
+prob.obj = @(x) geopt_objective(x, prob);
+prob.nlcon = @(x) geopt_nonlinear_con(x, prob);
 % prob.options.chord_decomp = 'no';
 % Solve
 [x_sol, info] = ipnsdp_solve(prob);

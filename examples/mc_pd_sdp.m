@@ -58,9 +58,9 @@ prob_p.nX = 1;
 prob_p.dimX = [m + n];
 prob_p.nu = 0;
 prob_p.nPSDcon = 0;
-prob_p.f_obj = @(x) 0.5 * trace(x.X{1});
+prob_p.obj = @(x) 0.5 * trace(x.X{1});
 % Use a local function to return the constraints in the required format {eq, ineq, psd}
-prob_p.c1 = @(x) get_primal_constraints(x, prob_p);
+prob_p.nlcon = @(x) get_primal_constraints(x, prob_p);
 prob_p.x0.X = {eye(m + n)};
 prob_p.x0.u = [];
 prob_p.solve = @() ipnsdp_solve(prob_p);
@@ -86,16 +86,16 @@ total_indices = 1:(m * n);
 linear_idx_omega_complement = setdiff(total_indices, linear_idx_omega);
 % Add linear_idx_omega_complement to problem data for local function access
 prob_d.problem_data.linear_idx_omega_complement = linear_idx_omega_complement;
-prob_d.f_obj = @(x) -sum(x.u(linear_idx_omega) .* M_known);
+prob_d.obj = @(x) -sum(x.u(linear_idx_omega) .* M_known);
 % Use a local function to return the constraints in the required format {eq, ineq, psd}
-prob_d.c1 = @(x) get_dual_constraints(x, prob_d);
+prob_d.nlcon = @(x) get_dual_constraints(x, prob_d);
 prob_d.x0.u = zeros(m * n, 1);
 prob_d.solve = @() ipnsdp_solve(prob_d);
 [xd_ipnsdp, ~] = prob_d.solve();
 Z_ipnsdp = reshape(xd_ipnsdp.u, m, n);
 fprintf('\n--- IPNSDP Dual Results ---\n');
 disp(Z_ipnsdp);
-fprintf('Optimal dual value: %.4f\n', -prob_d.f_obj(xd_ipnsdp));
+fprintf('Optimal dual value: %.4f\n', -prob_d.obj(xd_ipnsdp));
 fprintf('Check for sparsity: Max value outside Omega: %.4e\n', max(abs(Z_ipnsdp(linear_idx_omega_complement))));
 
 %% ==================== PRIMAL SDP (SeDuMi) ====================

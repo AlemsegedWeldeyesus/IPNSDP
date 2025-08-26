@@ -25,18 +25,17 @@ prob.ubu = 5*ones(4,1);
 prob.nPSDcon = 0;       
 
 % Objective
-prob.f_obj = @(x) objective(x, prob);
+prob.obj = @(x) objective(x, prob);
 
 % Nonlinear and PSD constraints
-prob.c1 = @(x) nonlinear_constraint(x, prob);
+prob.nlcon = @(x) nonlinear_constraint(x, prob);
 
 % Initial guess
 prob.x0.X = {};
 prob.x0.u = 1*[2; 2; 2; 2]; % Feasible start
 
 %% Solve
-prob.solve = @() ipnsdp_solve(prob);
-[x_sol, info] = prob.solve();
+[x_sol, info] = ipnsdp_solve(prob);
 
 disp('Solution:');
 disp('x ='), disp(x_sol.u);

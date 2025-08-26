@@ -53,10 +53,10 @@ for i = 1:length(Hsize)
     prob.nPSDcon = 0;        
    
     % Objective function
-    prob.f_obj = @(x) norm(x.u * x.X{1} - H, 'fro')^2;
+    prob.obj = @(x) norm(x.u * x.X{1} - H, 'fro')^2;
   
     % Constraints: [eq, ineq, psd]
-    prob.c1 = @(x) deal( ...
+    prob.nlcon = @(x) deal( ...
         diag(x.u * x.X{1}) - 1, ...       % diag(z*X) = 1
         [], ...                           % no inequalities
         {});                              % no PSD constraints
@@ -66,8 +66,7 @@ for i = 1:length(Hsize)
     % prob.x0.u = 1;
 
     %% Solve
-    prob.solve = @() ipnsdp_solve(prob);
-    [x, info] = prob.solve();
+    [x, info] = ipnsdp_solve(prob);
 
     %% Save result
     filename = sprintf('%s/ncm_s_b_%d.mat', save_folder, n);

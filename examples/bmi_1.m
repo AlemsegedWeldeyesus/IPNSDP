@@ -71,17 +71,16 @@ for i =1:size(ndm_values,1)
     prob.nPSDcon = 1;        % One PSD constraint (the BMI)
     
     % Objective: minimize lambda (last variable)
-    prob.f_obj = @(x) x.u(end);
+    prob.obj = @(x) x.u(end);
 
     % Initial guess
     prob.x0.u = zeros(n + 1, 1);
     
     % Nonlinear constraints
-    prob.c1 = @(x) get_constraints_bmi(x, prob);
+    prob.nlcon = @(x) get_constraints_bmi(x, prob);
     
     % Solve 
-    prob.solve = @() ipnsdp_solve(prob);
-    [x, info] = prob.solve();
+    [x, info] = ipnsdp_solve(prob);
 
     %% Save result
     filename = sprintf('%s/bmi_n%d_d%d_m%d.mat', save_folder, n,d,m);

@@ -48,17 +48,16 @@ for i = 1:length(N_values)
     
     % Objective function (negated for minimization)
     % x.u = [x_1,...,x_N, t_1,...,t_N]
-    prob.f_obj = @(x) -0.5 * sum(log(1 + x.u(N+1:end)));
+    prob.obj = @(x) -0.5 * sum(log(1 + x.u(N+1:end)));
     
     % Constraints: equality, inequality, and PSD
-    prob.c1 = @(x) get_constraints_channel_capacity(x, prob);
+    prob.nlcon = @(x) get_constraints_channel_capacity(x, prob);
     
     % Initial guess: concatenate x and t as a 2N-dimensional vector
     prob.x0.u = ones(2 * N, 1);
 
     % Call the IPNSDP solver
-    prob.solve = @() ipnsdp_solve(prob);
-    [x, info] = prob.solve();
+    [x, info] = ipnsdp_solve(prob);
     
      %% Save result
 
