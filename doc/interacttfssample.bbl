@@ -1,0 +1,110 @@
+\begin{thebibliography}{10}
+\providecommand{\MR}{\relax\unskip\space MR }
+\providecommand{\url}[1]{\normalfont{#1}}
+\providecommand{\urlprefix}{Available at }
+
+\bibitem{Ali95}
+S. Alinhac, \emph{Blowup for Nonlinear Hyperbolic Equations}, Progress in
+  Nonlinear Differential Equations and Applications Vol.~17, Birkh{\"a}user,
+  Boston, MA, 1995.
+
+\bibitem{Bow76}
+F.E. Bowder (ed.), \emph{Nonlinear Operators and Nonlinear Equations of
+  Evolution in {B}anach Spaces}, Proceedings of Symposia in Pure Mathematics
+  Vol. 18, Part~2, American Mathematical Society, Providence, RI, 1976.
+
+\bibitem{BGP02}
+J. Burckhardt, M. Gunzburger, and J. Peterson, \emph{Insensitive functionals,
+  inconsistent gradients, spurious minima, and regularized functionals in flow
+  optimization problems}, Int. J. Comput. Fluid Dyn. 16 (2002), pp. 171--185.
+
+\bibitem{Con96}
+A.R. Conn and P.L. Toint, \emph{An algorithm using quadratic interpolation}, in
+  \emph{Nonlinear Optimization and Applications}, G. Di~Pillo and F. Giannessi,
+  eds., Kluwer Academic/Plenum Publishers, New York,  1996, pp. 27--47.
+
+\bibitem{Coo03}
+I.D. Coope and C.J. Price, \emph{Positive bases in numerical optimization},
+  Comput. Optim. Appl. 21 (2003), pp. 169--175.
+
+\bibitem{Ell98}
+J.S. Ellenberg, \emph{Hilbert modular forms and the {G}alois representations
+  associated to {H}ilbert-{B}lumenthal abelian varieties}, Ph.D. diss., Harvard
+  University,  1998.
+
+\bibitem{Fle80}
+R. Fletcher, \emph{Practical Methods of Optimization}, 2nd ed., Vol.~2, Wiley
+  and Sons, New York, 1980.
+
+\bibitem{FGK03}
+R. Fourer, D.M. Gay, and B.W. Kernighan, \emph{{AMPL}: A Modeling Language for
+  Mathematical Programming}, 2nd ed., Thomson/Brooks/Cole, Pacific Grove, CA,
+  2003.
+
+\bibitem{GMW81}
+P.E. Gill, W. Murray, and M.H. Wright, \emph{Practical Optimization}, Academic
+  Press, London, 1981.
+
+\bibitem{GHGsoft}
+T.G. Golda, P.D. Hough, and G. Gay, \emph{{APPSPACK} ({A}synchronous parallel
+  pattern search package)}. Software available at
+  http://software.sandia.gov/appspack.
+
+\bibitem{Hag03}
+J. Haglund, \emph{Conjectured statistics for the {$q,t$}-{C}atalan numbers},
+  preprint (2003), to appear in Adv. Math.
+  \urlprefix\url{http://www.math.upenn.edu/$\sim$jhaglund}.
+
+\bibitem{Hai01}
+M. Haiman, \emph{Hilbert schemes, polygraphs, and the {M}acdonald positivity
+  conjecture}, J. Amer. Math. Soc. 14 (2001), pp. 941--1006.
+  \urlprefix\url{http://www.math.berkeley.edu/$\sim$mhaiman}. \MR{2002c:14008}
+
+\bibitem{Har97}
+W.E. Hart, \emph{A stationary point convergence theory of evolutionary
+  algorithms}, in \emph{Foundations of Genetic Algorithms 4}, R.K. Belew and
+  M.D. Vose, eds., Morgan Kaufmann, San Francisco,  1997, pp. 127--134.
+
+\bibitem{Hol03}
+J. Holt, \emph{Multiple bumping of components of deformation spaces of
+  hyperbolic 3-manifolds}, Amer. J. Math. 125 (2003), pp. 691--736.
+  \urlprefix\url{http://muse.jhu.edu/journals/american\_journal\_of\_mathematics/v125/125.4holt.pdf}.
+
+\bibitem{Hor96}
+U. Hornung (ed.), \emph{Homogenization and Porous Media}, Springer, Berlin,
+  1996.
+
+\bibitem{Hov03}
+P. Hovland, \emph{Automatic differentiation and its role in simulation-based
+  optimization}, IMA Workshop, Minneapolis, MN, 2003.
+
+\bibitem{Kih01}
+S. Kihara, \emph{On an elliptic curve over {$Q(t)$} of rank $\geq$14}, Proc.
+  Japan Acad. Ser. A Math. Sci. 77 (2001), pp. 50--51. \MR{2002a:11057}
+
+\bibitem{Mul00}
+\emph{Multi{S}implex 2.0}. Grabitech Solutions AB, Sundvall, Sweden, 2000;
+  software available at http://www.multisimplex.com.
+
+\bibitem{Pow00}
+M.J.D. Powell, \emph{On the {L}agrange functions of quadratic models that are
+  defined by interpolation}, Tech. {R}ep. DAMTP 2000/NA10, Department of
+  Applied Mathematics and Theoretical Physics, University of Cambridge,
+  Cambridge, UK,  2000.
+
+\bibitem{Ste98}
+G.W. Stewart, \emph{Matrix Algorithms. Volume 1: Basic Decompositions}, SIAM,
+  Philadelphia, 1998.
+
+\bibitem{Str97}
+N.P. Strickland, \emph{Finite subgroups of formal groups}, J. Pure Appl.
+  Algebra 121 (1997), pp. 161--208.
+
+\bibitem{Tay03}
+R. Taylor, \emph{On the meromorphic continuation of degree two {L-functions}},
+  preprint (2003). \urlprefix\url{http://abel.math.harvard.edu/$\sim$rtaylor/}.
+
+\bibitem{Wei95}
+A. Weil, \emph{Basic Number Theory}, Springer-Verlag, Berlin, 1995.
+
+\end{thebibliography}
