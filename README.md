@@ -137,4 +137,4 @@ See the license file.
 
 Alemseged Weldeyesus and Miguel F. Anjos
 
-**Correspondence:** alexaleme@gmail.com and a.weldeyesus@ed.ac.uk   
+**Correspondence:** alexaleme@gmail.com and Miguel.F.Anjos@ed.ac.uk   
