@@ -125,7 +125,7 @@ The solver returns two main outputs: `x` and `info`.
 
 ## Documentation
 
-- For clarity of the mathematical formulation, see **ipnsdp.pdf**.  
+- For clarity of the mathematical formulation, see **manuscript.pdf**.  
 - For further details on problem setup and solver options, refer to **ipnsdp_user_template.m**.  
 - Several illustrative examples are also included in the **examples** directory.  
 
@@ -137,4 +137,4 @@ See the license file.
 
 Alemseged Weldeyesus and Miguel F. Anjos
 
-**Correspondence:** a.weldeyesus@ed.ac.uk  
+**Correspondence:** alexaleme@gmail.com and a.weldeyesus@ed.ac.uk   
