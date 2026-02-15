@@ -135,6 +135,6 @@ See the license file.
 
 ## Authors
 
-Alemseged Weldeyesus and Miguel F. Anjos
+Alemseged G. Weldeyesus and Miguel F. Anjos
 
 **Correspondence:** alexaleme@gmail.com and Miguel.F.Anjos@ed.ac.uk   
